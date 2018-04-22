@@ -8,17 +8,17 @@ $res = [];
 
 foreach($var as $e)  {
     if(
-        strpos($e['title'], $_GET['size']) &&
-        $e['price'] <= $_GET['price'] &&
-        strpos($e['title'], $_GET['location'])
+        strpos($e['title'], $_POST['result']['parameters']['area'][0]) &&
+        $e['price'] <= $_POST['result']['parameters']['price'][0] &&
+        strpos($e['title'], $_POST['result']['parameters']['size'][0])
     ) {
         array_push($res, $e);
     }
 }
 
 $response = [
-    "speech" => "Dev server has received the request",
-    "displayText" => "Dev server has received the request",
+    "speech" => $res[0],
+    "displayText" => $res[0],
     "data" => $_POST,
     "source" => "dev_server"
 ];
