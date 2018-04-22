@@ -21,8 +21,8 @@ foreach($var as $e)  {
 }
 
 $response = [
-    "speech" => "Check now",
-    "displayText" => $res[0],
+    "speech" => $res[0]['title'],
+    "displayText" => $res[0]['title'],
     "data" => $data,
     "source" => "dev_server"
 ];
