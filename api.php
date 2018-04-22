@@ -19,7 +19,7 @@ foreach($var as $e)  {
         array_push($res, $e);
     }
 }
-$msg =  count($res[0]['title']) > 0 ? $res[0]['title'] : "Could not found anything for you, Sorry!";
+$msg =  count($res[0]['title']) > 0 ? $res[0]['title']." ( For more info please visit -> ". $res[0]['link']: "Could not found anything for you, Sorry!";
 $response = [
     "speech" => $msg,
     "displayText" => $msg,
