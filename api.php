@@ -19,10 +19,10 @@ foreach($var as $e)  {
         array_push($res, $e);
     }
 }
-
+$msg =  count($res[0]['title']) > 0 ? $res[0]['title'] : "Could not found anything for you, Sorry!";
 $response = [
-    "speech" => $res[0]['title'],
-    "displayText" => $res[0]['title'],
+    "speech" => $msg,
+    "displayText" => $msg,
     "data" => $data,
     "source" => "dev_server"
 ];
