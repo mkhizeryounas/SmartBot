@@ -6,6 +6,10 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 $var = json_decode($var, true);
 $res = [];
 
+$data = [
+    $_POST['result']['parameters']['area'][0],$_POST['result']['parameters']['price'][0],$_POST['result']['parameters']['size'][0]
+];
+
 foreach($var as $e)  {
     if(
         strpos($e['title'], $_POST['result']['parameters']['area'][0]) &&
@@ -17,9 +21,9 @@ foreach($var as $e)  {
 }
 
 $response = [
-    "speech" => $res[0],
+    "speech" => "Check now",
     "displayText" => $res[0],
-    "data" => $_POST,
+    "data" => $data,
     "source" => "dev_server"
 ];
 
