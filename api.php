@@ -12,9 +12,9 @@ $data = [
 
 foreach($var as $e)  {
     if(
-        strpos($e['title'], $_POST['result']['parameters']['area'][0]) &&
+        strpos(strtolower($e['title']), strtolower($_POST['result']['parameters']['area'][0])) &&
         $e['price'] <= $_POST['result']['parameters']['price'][0] &&
-        strpos($e['title'], $_POST['result']['parameters']['size'][0])
+        strpos(strtolower($e['title']), strtolower($_POST['result']['parameters']['size'][0]))
     ) {
         array_push($res, $e);
     }
