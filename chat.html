@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.2/angular-sanitize.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="app.css">
     </head>
@@ -27,16 +28,18 @@
             </li>
         </div>
     </nav>
-    <div class="chatboxes">
+    <div class="chatboxes" id="chatboxes">
 
         <div class="row" ng-repeat="c in chat">
             <div class="col-12">
                 <div ng-class="{'man-chat float-right': c.source == 'man' , 'bot-chat': c.source == 'bot'}">
-                    <p>{{c.text}}</p>
+                    <p ng-bind-html="to_trusted(c.text)"></p>
                 </div>
             </div>
         </div>
-        
+        <br>
+        <br>
+        <br>
         
         
     </div>
