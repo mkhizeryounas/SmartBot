@@ -5,6 +5,8 @@ var data = {
     img : "href"
 }
 
+// https://console.dialogflow.com/api-client/demo/embedded/4e4d97c6-48e7-4ef2-b6e0-f8a0ba56c18b/demoQuery?q=i%20want%20to%20purchase&sessionId=00098425-3d5e-d225-96ab-9961b0c6ff92
+
 
 // lamudi 
 
