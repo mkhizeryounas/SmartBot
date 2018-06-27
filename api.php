@@ -57,7 +57,7 @@ if(count($res[0]['data']['title']) > 0) {
             // echo json_encode($k);
             // exit();
             if($k == $d['service']) {
-                $msg .= strtoupper($k)." - ".$d['data']['title']." ( For more info please visit -> <a href='". $d['data']['link']."'>Here</a>\n";
+                $msg .= strtoupper($k)." - ".$d['data']['title']." ( For more info please visit -> <a href='". $d['data']['link']."'>Here</a><br><br><br>";
                 break;
             }
         }
