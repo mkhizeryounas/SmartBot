@@ -16,6 +16,7 @@ app.controller('myCtrl', function($scope, $http, $sce) {
     $scope.q = "";
     $scope.chat = Array();
     $scope.go = (q) => {
+        $("#inp").prop('disabled', true);
         let query = getLink(q);
         $scope.chat.push({
             text: q,
@@ -31,6 +32,9 @@ app.controller('myCtrl', function($scope, $http, $sce) {
             setTimeout(()=> {
                 var objDiv = document.getElementById("chatboxes");
                 objDiv.scrollTop = objDiv.scrollHeight;
+                $("#inp").prop('disabled', false);
+                $("#inp").focus();
+
             }, 500)
         })
     }
