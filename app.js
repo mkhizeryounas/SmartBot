@@ -28,8 +28,10 @@ app.controller('myCtrl', function($scope, $http, $sce) {
                 source: "bot"
             });
             $scope.q = "";
-            var objDiv = document.getElementById("chatboxes");
-            objDiv.scrollTop = objDiv.scrollHeight;
+            setTimeout(()=> {
+                var objDiv = document.getElementById("chatboxes");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            }, 500)
         })
     }
     $scope.to_trusted = function(html_code) {
